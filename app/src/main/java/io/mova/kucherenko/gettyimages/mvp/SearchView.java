@@ -11,6 +11,7 @@ import io.mova.kucherenko.gettyimages.adapter.ImageAdapter;
 import io.mova.kucherenko.gettyimages.databinding.ActivitySearchBinding;
 import io.mova.kucherenko.gettyimages.models.response.Images;
 import io.mova.kucherenko.gettyimages.utils.SpaceItemDecoration;
+import io.mova.kucherenko.gettyimages.utils.network.Connection;
 
 public class SearchView extends AppCompatActivity implements SearchContract.View {
 
@@ -31,7 +32,8 @@ public class SearchView extends AppCompatActivity implements SearchContract.View
         binding.search.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-                presenter.search(s);
+                if (Connection.isNetworkAvailable(SearchView.this))
+                    presenter.search(s);
                 return false;
             }
 

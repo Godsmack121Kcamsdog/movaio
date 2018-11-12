@@ -11,7 +11,6 @@ import io.mova.kucherenko.gettyimages.db.manager.ImDBManager;
 import io.mova.kucherenko.gettyimages.models.response.Hit;
 import io.mova.kucherenko.gettyimages.models.response.Images;
 import io.mova.kucherenko.gettyimages.utils.DateTimeUtils;
-import io.realm.Realm;
 
 public class SearchPresenter implements SearchContract.EventListener, OnError {
 
